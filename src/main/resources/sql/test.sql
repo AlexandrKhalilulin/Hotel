@@ -1,0 +1,3 @@
+CREATE TABLE TEST2(
+id INT
+)

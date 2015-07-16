@@ -1,6 +1,6 @@
 package com.epam.ak.model;
 
-public class Administrator extends NamedEntity implements User{
+public class Administrator extends NamedEntity implements User {
     @Override
     public void createRequestForm() {
 

@@ -2,7 +2,7 @@ package com.epam.ak.model;
 
 import java.util.UUID;
 
-public class ApartmentType extends NamedEntity{
+public class ApartmentType extends NamedEntity {
     public ApartmentType() {
     }
 

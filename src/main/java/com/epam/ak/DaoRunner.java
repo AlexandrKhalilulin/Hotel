@@ -16,7 +16,7 @@ public class DaoRunner {
         roomDao.merge(room);
         roomDao.insert(room);
         roomDao.removeById(2L);
-        Connpoll connpoll = new Connpoll();
+        Connpoll connpoll = Connpoll.getInstance();
 
     }
 }

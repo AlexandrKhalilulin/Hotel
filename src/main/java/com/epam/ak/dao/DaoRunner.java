@@ -1,8 +1,8 @@
-package com.epam.ak;
+package com.epam.ak.dao;
 
 import com.epam.ak.dao.DaoFactory;
 import com.epam.ak.dao.RoomDao;
-import com.epam.ak.db.Connpoll;
+import com.epam.ak.db.ConnectionPoll;
 import com.epam.ak.model.Room;
 
 public class DaoRunner {
@@ -16,7 +16,7 @@ public class DaoRunner {
         roomDao.merge(room);
         roomDao.insert(room);
         roomDao.removeById(2L);
-        Connpoll connpoll = Connpoll.getInstance();
+        ConnectionPoll connectionPoll = ConnectionPoll.getInstance();
 
     }
 }

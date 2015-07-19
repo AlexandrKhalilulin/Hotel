@@ -1,7 +1,5 @@
 package com.epam.ak.dao;
 
-import com.epam.ak.dao.DaoFactory;
-import com.epam.ak.dao.RoomDao;
 import com.epam.ak.db.ConnectionPoll;
 import com.epam.ak.model.Room;
 

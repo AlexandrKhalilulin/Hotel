@@ -30,19 +30,15 @@ public class Runner {
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
-
                     connectionPoll.releaseConnection(c);
-
                 }
             }
         };
         Thread[] threads = new Thread[9];
-        for (int i = 0; i < 9; i++) { threads[i] = new Thread(runnable);
+        for (int i = 0; i < 9; i++) {
+            threads[i] = new Thread(runnable);
             threads[i].start();
         }
-        
-
-
 
     }
 }

@@ -47,7 +47,6 @@ public class ConnectionPoll implements DataSource {
         }
         log.info("Created {} connections", connectionsQueue.size());
 
-
     }
 
     public static ConnectionPoll getInstance() {
@@ -64,22 +63,22 @@ public class ConnectionPoll implements DataSource {
         return connection;
     }
 
-    public void releaseConnection(Connection connection){
+    public void releaseConnection(Connection connection) {
         connectionsQueue.offer(connection);
     }
 
-    public void close(){
-        if (ConnpollHolder.instance != null){
+    public void close() {
+        if (ConnpollHolder.instance != null) {
             ConnpollHolder.instance.clearConnectionQueue();
             log.info("ConnectionPoll succesfully close");
         }
     }
 
-    public void clearConnectionQueue(){
+    public void clearConnectionQueue() {
         Connection connection;
-        while ((connection = connectionsQueue.poll()) != null){
+        while ((connection = connectionsQueue.poll()) != null) {
             try {
-                if (!connection.getAutoCommit()){
+                if (!connection.getAutoCommit()) {
                     connection.commit();
                 }
                 connection.close();

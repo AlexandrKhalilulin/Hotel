@@ -1,13 +1,11 @@
 package com.epam.ak.model;
 
-import org.joda.money.Money;
-
 import java.util.UUID;
 
 public class Room extends BaseEntity {
     private int bedsCount;
     private ApartmentType apartmentType;
-    private Money dailyCost;
+    private int dailyCost;
 
     public Room() {
     }
@@ -16,6 +14,14 @@ public class Room extends BaseEntity {
         super(uuid, id);
         this.bedsCount = bedsCount;
         this.apartmentType = apartmentType;
+    }
+
+    public int getDailyCost() {
+        return dailyCost;
+    }
+
+    public void setDailyCost(int dailyCost) {
+        this.dailyCost = dailyCost;
     }
 
     public int getBedsCount() {

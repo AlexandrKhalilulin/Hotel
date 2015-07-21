@@ -1,20 +1,16 @@
 package com.epam.ak.dao;
 
 import com.epam.ak.db.ConnectionPoll;
-import com.epam.ak.model.Room;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DaoRunner {
-    public static void main(String[] args) {
+    static Logger log = LoggerFactory.getLogger(DaoRunner.class);
 
+    public static void main(String[] args) {
         DaoFactory daoFactory = DaoFactory.getInstance();
         RoomDao roomDao = daoFactory.newRoomDao();
-        Room room = roomDao.findById(2L);
-        roomDao.set(room);
-        roomDao.update(room);
-        roomDao.merge(room);
-        roomDao.insert(room);
-        roomDao.removeById(2L);
-        ConnectionPoll connectionPoll = ConnectionPoll.getInstance();
 
+        ConnectionPoll connectionPoll = ConnectionPoll.getInstance();
     }
 }

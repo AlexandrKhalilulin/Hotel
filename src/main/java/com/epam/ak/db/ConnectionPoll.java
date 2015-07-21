@@ -50,7 +50,7 @@ public class ConnectionPoll implements DataSource {
     }
 
     public static ConnectionPoll getInstance() {
-        return ConnpollHolder.instance;
+        return ConnectionPollHolder.instance;
     }
 
     public Connection takeConnection() {
@@ -76,15 +76,16 @@ public class ConnectionPoll implements DataSource {
     }
 
     public void close() {
-        if (ConnpollHolder.instance != null) {
-            ConnpollHolder.instance.clearConnectionQueue();
+        if (ConnectionPollHolder.instance != null) {
+            ConnectionPollHolder.instance.clearConnectionQueue();
             log.info("Poll connection is empty");
-            ConnpollHolder.instance = null;
-            log.info("ConnectionPoll succesfully close");
+            //question about
+            //ConnpollHolder.instance = null;
+            //log.info("ConnectionPoll succesfully close");
         }
     }
 
-    public void clearConnectionQueue() {
+    private void clearConnectionQueue() {
         Connection connection;
         while ((connection = connectionsQueue.poll()) != null) {
             try {
@@ -156,8 +157,8 @@ public class ConnectionPoll implements DataSource {
                 '}';
     }
 
-    private static class ConnpollHolder {
-        private static ConnectionPoll instance = new ConnectionPoll();
+    private static class ConnectionPollHolder {
+        private final static ConnectionPoll instance = new ConnectionPoll();
     }
 
 }

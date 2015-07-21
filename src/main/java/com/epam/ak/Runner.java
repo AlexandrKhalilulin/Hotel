@@ -24,7 +24,7 @@ public class Runner {
                         e.printStackTrace();
                     }
                     try {
-                        PreparedStatement ps = c.prepareStatement("INSERT INTO ROOM SET BEDS_COUNT = 2, APARTMENT_TYPE = 12");
+                        PreparedStatement ps = c.prepareStatement("INSERT INTO ROOM SET BEDS_COUNT = 2, APARTMENT_TYPE = 12, DAILY_COST = 10");
                         ps.execute();
                         ps.close();
                     } catch (SQLException e) {
@@ -39,6 +39,6 @@ public class Runner {
             threads[i] = new Thread(runnable);
             threads[i].start();
         }
-
     }
+
 }
